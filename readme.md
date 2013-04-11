@@ -4,14 +4,53 @@ This is to help workflow developers to fast generate formatted XML which outputs
 
 ##Python
 Library: Feedback.py  
-Sample: sample.py
+Author: Peter Okma  
+Source :[https://github.com/peteokma/alfred-workflows](https://github.com/peteokma/alfred-workflows)  
+Modifier: Ruoran Liu
+
+`python sample.ph`
 
 ```python
 from Feedback import Feedback
 fb = Feedback()
-fb.add_item(title="Title", subtitle="Item description", arg="Value return to workflow", valud="yes", autocomplete="Description", icon="icon_path.jpg")
+fb.add_item(title="Title", subtitle="Item description", arg="Value return to workflow", valud="yes", autocomplete="Description", icon="public.jpeg", filetype="file", icontype="filetype")
 print fb
 ```
 
+##PHP
+Library: workflows.php  
+Author: David Ferguson  
+Source: [http://dferg.us/workflows-class/](http://dferg.us/workflows-class/)
 
+`php -f sample.php`
+
+Initilization  
+```php
+include_once('workflows.php');
+$w = new Workflows();
+```
+Using result
+```php
+$w->result('itemuid', 'itemarg', 'Some Item Title', 'Some item subtitle', 'icon.png', 'yes', 'autocomplete');
+echo $w->toxml();
+```
+
+Using array
+```php
+$results = array();
+$temp = array(
+'uid' => 'itemuid',
+'arg' => 'itemarg',
+'title' => 'Some Item Title',
+'subtitle' => 'Some item subtitle',
+'icon' => 'icon.png',
+'valid' => 'yes',
+'autocomplete' => 'autocomplete'
+);
+array_push( $results, $temp );
+echo $w->toxml( $results );
+```
+
+---
+##Reference
 XML format explained: [http://www.alfredforum.com/topic/5-generating-feedback-in-workflows/](http://www.alfredforum.com/topic/5-generating-feedback-in-workflows/)
