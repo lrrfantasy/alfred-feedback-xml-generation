@@ -54,7 +54,7 @@ echo $w->toxml( $results );
 ##Nodejs
 Library: Feedback.js
 Author: Qiu Wang   
-Blog: [http://ishouldbeageek.me](ishouldbeageek.me)
+Blog: [http://ishouldbeageek.me](http://ishouldbeageek.me)
 
 `node sample.js`
 
