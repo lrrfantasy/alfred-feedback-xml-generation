@@ -51,6 +51,44 @@ array_push( $results, $temp );
 echo $w->toxml( $results );
 ```
 
+##Nodejs
+Library: Feedback.js
+Author: Qiu Wang
+
+`node sample.js`
+
+Initialzation
+```javascript
+var feedback = new Feedback();
+feedback.addItem({ 
+  uid : 'youruid', 
+  arg : 'yourarg', 
+  title : 'yourtitle',
+  subtitle : 'your subtitle',
+  icon : {
+    type : 'youricontype',
+    value : 'youricon'
+  }
+});
+
+var feedback2 = new Feedback({ 
+  uid : 'youruid', 
+  arg : 'yourarg', 
+  title : 'yourtitle',
+  subtitle : 'your subtitle',
+  icon : {
+    type : 'youricontype',
+    value : 'youricon'
+  }
+});
+
+var feedback3 = new Feedback([/* item, item2 */]);
+
+console.log(feedback.toString());
+console.log(feedback2.toString());
+console.log(feedback3.toString());
+```
+
 ---
 ##Reference
 XML format explained: [http://www.alfredforum.com/topic/5-generating-feedback-in-workflows/](http://www.alfredforum.com/topic/5-generating-feedback-in-workflows/)
