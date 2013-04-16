@@ -2,6 +2,12 @@
 
 This is to help workflow developers to fast generate formatted XML which outputs to Alfred feedback.
 
+[Python](#python)  
+[PHP](#php)  
+[Nodejs](#nodejs)  
+[Shell](#shell)  
+[Ruby](#ruby)  
+
 ##Python
 Library: Feedback.py  
 Author: Peter Okma  
@@ -10,22 +16,22 @@ Modifier: Ruoran Liu
 
 `python sample.ph`
 
-Import  
+**Import**  
 ```python
 from Feedback import Feedback
 ```
 
-Initialization  
+**Initialization**  
 ```python
 fb = Feedback()
 ```
 
-Adding item  
+**Adding item**  
 ```python
 fb.add_item(title="Title", subtitle="Item description", arg="Value return to workflow", valid="yes", autocomplete="Description", icon="public.jpeg", filetype="file", icontype="filetype")
 ```
 
-Outputting XML  
+**Outputting XML**  
 ```python
 print fb
 ```
@@ -37,27 +43,27 @@ Source: [http://dferg.us/workflows-class/](http://dferg.us/workflows-class/)
 
 `php -f sample.php`
 
-Import  
+**Import**  
 ```php
 include_once('workflows.php');
 ```
 
-Initialization  
+**Initialization**  
 ```php
 $w = new Workflows();
 ```
 
-Adding item (using result)  
+**Adding item (using result)**  
 ```php
 $w->result('itemuid', 'itemarg', 'Some Item Title', 'Some item subtitle', 'icon.png', 'yes', 'autocomplete');
 ```
 
-Outputting XML (using result)  
+**Outputting XML (using result)**  
 ```php
 echo $w->toxml();
 ```
 
-Adding item (using array)  
+**Adding item (using array)**  
 ```php
 $results = array();
 $temp = array(
@@ -72,7 +78,7 @@ $temp = array(
 array_push($results, $temp);
 ```
 
-Outputting XML (using array)  
+**Outputting XML (using array)**  
 ```php
 echo $w->toxml($results);
 ```
@@ -84,12 +90,12 @@ Blog: [http://ishouldbeageek.me](http://ishouldbeageek.me)
 
 `node sample.js`
 
-Import  
+**Import**  
 ```javascript
 var Feedback = require('./Feedback');
 ```
 
-Initialization & adding item (using function)  
+**Initialization & adding item (using function)**  
 ```javascript
 var feedback = new Feedback();
 feedback.addItem({ 
@@ -104,7 +110,7 @@ feedback.addItem({
 });
 ```
 
-Initialization & adding item (using constructor)  
+**Initialization & adding item (using constructor)**  
 ```javascript
 var feedback = new Feedback({ 
   uid : 'youruid', 
@@ -118,7 +124,7 @@ var feedback = new Feedback({
 });
 ```
 
-Initialization & adding item (using array)  
+**Initialization & adding item (using array)**  
 ```javascript
 item = { 
   uid : 'youruid', 
@@ -133,7 +139,7 @@ item = {
 var feedback = new Feedback([item/*, item2 */]);
 ```
 
-Outputting XML  
+**Outputting XML**  
 ```javascript
 console.log(feedback.toString());
 ```
@@ -144,18 +150,18 @@ Author: Ruoran Liu
 
 `./sample.sh`
 
-Import  
+**Import**  
 ```sh
 source feedback.sh
 ```
 
-Adding item  
+**Adding item**  
 ```sh
 item1=$(add_item "id1" "Title" "Subtitle" "arg")
 item2=$(add_item "id2" "Test" "This is the description" "returned value" "yes" "autocomplete" "public.jpeg" "file" "filetype")
 ```
 
-Outputting XML  
+**Outputting XML**  
 ```sh
 output_xml "$item1" "$item2"
 ```
@@ -164,22 +170,22 @@ Library: alfred_feedback.rb
 
 `ruby sample.rb`
 
-Import  
+**Import**  
 ```ruby
 load 'alfred_feedback.rb'
 ```
 
-Initialization  
+**Initialization**  
 ```ruby
 feedback = Feedback.new
 ```
 
-Adding item  
+**Adding item**  
 ```ruby
 feedback.add_item({:title => "Title", :subtitle => "Description", :arg => "Value", :uid => "ID", :icon => {:type => "filetype", :name => "public.jpeg"}})
 ```
 
-Outputting XML
+**Outputting XML**
 ```ruby
 puts feedback.to_xml
 ```
