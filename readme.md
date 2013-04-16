@@ -29,13 +29,13 @@ Initilization
 include_once('workflows.php');
 $w = new Workflows();
 ```
-Using result
+Using result  
 ```php
 $w->result('itemuid', 'itemarg', 'Some Item Title', 'Some item subtitle', 'icon.png', 'yes', 'autocomplete');
 echo $w->toxml();
 ```
 
-Using array
+Using array  
 ```php
 $results = array();
 $temp = array(
@@ -52,14 +52,15 @@ echo $w->toxml( $results );
 ```
 
 ##Nodejs
-Library: Feedback.js   
-Author: Qiu Wang   
+Library: Feedback.js  
+Author: Qiu Wang  
 Blog: [http://ishouldbeageek.me](http://ishouldbeageek.me)
 
 `node sample.js`
 
-Initialzation
+Initialization  
 ```javascript
+
 var feedback = new Feedback();
 feedback.addItem({ 
   uid : 'youruid', 
@@ -88,6 +89,19 @@ var feedback3 = new Feedback([/* item, item2 */]);
 console.log(feedback.toString());
 console.log(feedback2.toString());
 console.log(feedback3.toString());
+```
+
+##Shell
+Library: feedback.sh  
+Author: Ruoran Liu
+
+`./sample.sh`
+
+```shell
+source feedback.sh
+item1=$(add_item "id1" "Title" "Subtitle" "arg")
+item2=$(add_item "id2" "Test" "This is the description" "returned value" "yes" "autocomplete" "public.jpeg" "file" "filetype")
+output_xml "$item1" "$item2"
 ```
 
 ---
