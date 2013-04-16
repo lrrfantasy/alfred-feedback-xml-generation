@@ -103,6 +103,18 @@ item1=$(add_item "id1" "Title" "Subtitle" "arg")
 item2=$(add_item "id2" "Test" "This is the description" "returned value" "yes" "autocomplete" "public.jpeg" "file" "filetype")
 output_xml "$item1" "$item2"
 ```
+##Ruby
+Library: alfred_feedback.rb
+
+`ruby sample.rb`
+
+```ruby
+load 'alfred_feedback.rb'
+
+feedback = Feedback.new
+feedback.add_item({:title => "Title", :subtitle => "Description", :arg => "Value", :uid => "ID", :icon => {:type => "filetype", :name => "public.jpeg"}})
+puts feedback.to_xml
+```
 
 ---
 ##Reference
